@@ -1,0 +1,195 @@
+@import '~bootstrap/scss/bootstrap';
+
+// Variable
+$blackColor: #111;
+$whiteColor: #fff;
+$greyColor: #F5F5F7;
+
+// Global
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  height: 100vh;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Button
+button {
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  border-style: solid;
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.button-solid {
+  background-color: $blackColor;
+  color: $whiteColor;
+  border-radius: 8px;
+}
+
+// Margin
+.mt {
+  &--20 {
+    margin-top: 20px;
+  }
+
+  &--50 {
+    margin-top: 50px;
+  }
+}
+
+// Site
+.site {
+  &__logo {
+    a {
+      color: $whiteColor;
+      font-size: 5rem;
+      text-align: center;
+    }
+  }
+}
+
+// Dashboard
+.dashboard {
+  display: flex;
+  padding: 20px 40px;
+  gap: 40px;
+
+  &__center {
+    margin-left: calc(5vw + 20px);
+    flex-basis: 60%;
+    padding-top: 40px;
+  }
+
+  &__right {
+    padding-top: 40px;
+    flex-basis: 40%;
+  }
+}
+
+// Main
+.main {
+  padding: 40px;
+}
+
+.content {
+  margin-left: calc(15vw + 40px);
+}
+
+// Sidenav
+.sidenav {
+  background-color: $blackColor;
+  border-radius: 24px;
+  position: fixed;
+  left: 40px;
+  top: 40px;
+  bottom: 40px;
+  color: $whiteColor;
+  width: 15vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__logo {
+    flex-basis: 10%;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    flex: 1;
+  }
+
+  &__drawer {
+    flex-basis: 10%;
+  }
+}
+
+.menu {
+  &__link {
+    color: $whiteColor;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 16px;
+    color: #808080;
+
+    svg {
+      fill: inherit;
+    }
+  }
+
+  // Modifier
+  &--current {
+    background-color: $whiteColor;
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: $blackColor;
+
+    span {
+      background-color: $blackColor;
+      color: $whiteColor;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+// Section
+.section {
+  &__title {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+
+  &__profile {
+    background-color: $greyColor;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 3.6em;
+    }
+
+    div {
+      flex-basis: 50%;
+    }
+
+    img {
+      margin: -60px auto -20px;
+    }
+  }
+}
+
+// Card
+.card {
+  background-color: $greyColor;
+  border-radius: 14px;
+  padding: 20px;
+}

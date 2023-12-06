@@ -1,29 +1,15 @@
-import logo from './logo.svg';
-import './App.scss';
-import { TogaIcon, PeopleOutline, LogoIcon } from "./components/Icon";
-import illustrationjosh from './icon/illustration-josh.svg';
-import LineChart from './components/LineChart';
-import Course from './components/Course';
-import CircleChart from './components/CircleChart';
+import { useState } from 'react';
+import Course from '../components/Course';
+import CircleChart from '../components/CircleChart';
+import LineChart from '../components/LineChart';
+import illustrationjosh from '../icon/illustration-josh.svg';
+export default function Dashboard() {
+  const [key, setKey] = useState('dashboard');
 
-function App() {
   return (
     <>
-    <div className="dashboard">
-      <div className="sidenav">
-        <div className="sidenav__logo">
-          <h1 className="site__logo"><a href="">F.</a></h1>
-        </div>
-        <nav className="sidenav__menu">
-          <a href="" className='menu__link'><TogaIcon /></a>
-          <a href="" className='menu__link'><PeopleOutline /></a>
-          <a href="" className='menu__link'><TogaIcon /></a>
-          <a href="" className='menu__link'><TogaIcon /></a>
-        </nav>
-        <div className="sidenav__drawer">
-          <button type="button">button</button>
-        </div>
-      </div>
+    <div id="dashboard">
+      <h1 className="section__title">My Dashboard</h1>
 
       <div className="dashboard__center">
         
@@ -59,6 +45,7 @@ function App() {
   );
 }
 
+
 function Welcome(props) {
   return <h2>Hello, {props.name}</h2>;
 }
@@ -66,5 +53,3 @@ function Welcome(props) {
 function Example(props) {
   return <h2>Ini adalah {props.name}</h2>
 }
-
-export default App;
