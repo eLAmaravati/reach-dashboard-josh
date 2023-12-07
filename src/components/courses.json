@@ -1,0 +1,16 @@
+[
+	{
+		"id": 1,
+		"logo": "logo1",
+		"title": "React for Beginner",
+		"author": "Sandhika Galih",
+		"duration": "6h 30m",
+		"rating": 9.7
+	},
+	{
+		"id": 2,
+		"logo": "logo2",
+		"title": "Judul Kursus 2",
+		"rating": "rating2"
+	}
+]

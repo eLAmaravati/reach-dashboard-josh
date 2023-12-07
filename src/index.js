@@ -12,6 +12,10 @@ import {
 import Courses from './routes/Courses';
 import Profile from './routes/Profile';
 import Dashboard from './routes/Dashboard';
+import Progress from './routes/Progress';
+import Settings from './routes/Settings';
+import CourseReact from './routes/CourseReact';
+import "@fontsource/poppins";
 
 const router = createBrowserRouter([
   {
@@ -28,9 +32,21 @@ const router = createBrowserRouter([
         element: <Courses />,
       },
       {
+        path: "progress/",
+        element: <Progress />,
+      },
+      {
         path: "profile/",
         element: <Profile />,
       },
+      {
+        path: "settings/",
+        element: <Settings />,
+      },
+      {
+        path: "course-react/",
+        element: <CourseReact />,
+      }
     ],
   },
 ]);

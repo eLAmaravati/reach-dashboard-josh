@@ -1,21 +1,26 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
-class LineChart extends Component {
+class ChartLine extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       options: {
         chart: {
-          id: "line-chart",
-
+          id: "line-chart-weekly",
           toolbar: {
           show: false,
         },
         },
         xaxis: {
-          categories: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+          categories: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+          labels: {
+            show: true,
+          },
+          tooltip: {
+            enabled: false,
+          },
         },
         yaxis: {
           min: 0,
@@ -39,17 +44,20 @@ class LineChart extends Component {
             y: {
               formatter: function(val) {
                 return val;
-              }
+              },
             },
             fixed: {
               enabled: false,
               position: 'top',
               offsetX: 0,
               offsetY: 0,
+            },
+            x: {
+              show: false
             }
         },
         dataLabels: {
-          enabled: true,
+          enabled: false,
           enabledOnSeries: undefined,
           formatter: function(val) {
             return val + 'H';
@@ -79,20 +87,18 @@ class LineChart extends Component {
 
   render() {
     return (
-      <div className="app">
-        <div className="row">
-          <div className="mixed-chart">
+      <figure>
+        <div className="mixed-chart">
             <Chart
               options={this.state.options}
               series={this.state.series}
               type="line"
-              width="500"
+              width="100%"
             />
-          </div>
         </div>
-      </div>
+      </figure>
     );
   }
 }
 
-export default LineChart;
+export default ChartLine;

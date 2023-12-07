@@ -1,24 +1,45 @@
-@import '~bootstrap/scss/bootstrap';
-
 // Variable
 $blackColor: #111;
 $whiteColor: #fff;
 $greyColor: #F5F5F7;
+$borderColor: #cfcfcf;
+
+// Bootstrap
+$dark: $blackColor;
+$primary: $blackColor;
+
+.btn.btn-dark {
+  font-size: 12px;
+}
+
+@import '~bootstrap/scss/bootstrap';
+@import "~@flaticon/flaticon-uicons/css/regular/rounded";
+@import "~@flaticon/flaticon-uicons/css/solid/rounded";
+
+
+
+// Bootstrap Override
+.bs-nav-link-color {
+  color: $blackColor;
+}
+
+:root {
+  --bs-link-color: $blackColor;
+}
 
 // Global
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 10px;
 }
 
 body {
   height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 p {
-  font-size: 1.6rem;
   line-height: 1.5em;
   margin-bottom: 1.5rem;
 }
@@ -47,23 +68,13 @@ button {
   border-radius: 8px;
 }
 
-// Margin
-.mt {
-  &--20 {
-    margin-top: 20px;
-  }
-
-  &--50 {
-    margin-top: 50px;
-  }
-}
 
 // Site
 .site {
   &__logo {
     a {
       color: $whiteColor;
-      font-size: 5rem;
+      font-size: 2rem;
       text-align: center;
     }
   }
@@ -71,8 +82,9 @@ button {
 
 // Dashboard
 .dashboard {
-  display: flex;
-  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  padding: 20px 0 40px;
   gap: 40px;
 
   &__center {
@@ -88,31 +100,60 @@ button {
 }
 
 // Main
-.main {
-  padding: 40px;
-}
+// .main {
+//   padding: 40px;
+// }
+
+// .content {
+//   margin-left: calc(15vw + 40px);
+// }
 
 .content {
   margin-left: calc(15vw + 40px);
+  padding: 20px 40px;
+  width: 100%;
 }
 
 // Sidenav
 .sidenav {
-  background-color: $blackColor;
-  border-radius: 24px;
   position: fixed;
   left: 40px;
   top: 40px;
   bottom: 40px;
-  color: $whiteColor;
   width: 15vw;
   padding: 20px;
+  z-index: 1;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: $blackColor;
+  border-radius: 24px;
+  color: $whiteColor;
 
   &__logo {
+    font-size: 1rem;
+    font-weight: 600;
+
+  }
+
+  &__user {
     flex-basis: 10%;
+    border-bottom: 1px solid #484747;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    img {
+      margin: auto;
+    }
+  }
+
+  &__user-name {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
   }
 
   &__menu {
@@ -128,33 +169,53 @@ button {
   }
 }
 
+
+
 .menu {
+  justify-content: center;
+  row-gap: 20px;
+  flex: 1;
+  font-size: 16px;
+
+  &__item {
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+    &:hover {
+      background-color: #282828;
+    }
+  }
+
   &__link {
-    color: $whiteColor;
     display: flex;
     gap: 20px;
     align-items: center;
-    font-size: 16px;
-    color: #808080;
+    font-size: 14px;
+    color: #cfcfcf;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    
+  }
 
-    svg {
-      fill: inherit;
+  // Icon
+  &__icon {
+    i {
+      font-size: 14px;
     }
   }
 
   // Modifier
-  &--current {
+  &--active {
     background-color: $whiteColor;
     border-radius: 8px;
     padding: 8px 16px;
-    color: $blackColor;
 
-    span {
-      background-color: $blackColor;
-      color: $whiteColor;
-      border-radius: 50%;
-      height: 20px;
-      width: 20px;
+    &:hover {
+      background-color: $whiteColor;
+    }
+    
+    .menu__link {
+      color: $blackColor;
     }
   }
 }
@@ -162,8 +223,12 @@ button {
 // Section
 .section {
   &__title {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  &__content {
+    margin-top: 20px;
   }
 
   &__profile {
@@ -188,8 +253,101 @@ button {
 }
 
 // Card
-.card {
+.card-custom {
   background-color: $greyColor;
   border-radius: 14px;
   padding: 20px;
+  display: flex;
+}
+
+// Margin
+.gap {
+  &--40 {
+    gap: 40px;
+  }
+}
+
+.mt {
+  &--20 {
+    margin-top: 20px;
+  }
+
+  &--50 {
+    margin-top: 50px;
+  }
+}
+
+.pt {
+  &--40 {
+    padding-top: 40px;
+  }
+}
+
+// Course Item
+.course-item {
+  background-color: $greyColor;
+  border-radius: 14px;
+  padding: 20px;
+  font-size: 14px;
+  margin-bottom: 20px;
+
+  &__logo {
+    background-color: $whiteColor;
+    border-radius: 8px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+  }
+
+  &__title {
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.fs {
+  &--12 {
+    font-size: 12px;
+  }
+}
+
+i.fi {
+  vertical-align: middle;
+  line-height: 0;
+}
+
+
+.apexcharts-tooltip {
+    background: #f3f3f3;
+    color: $blackColor;
+  }
+
+  .apexcharts-tooltip-marker {
+    background-color: $blackColor !important;
+  }
+
+
+// Video
+  .video-responsive {
+    position: relative;
+    display: block;
+    height: 80vh;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid $greyColor;
+    border-radius: 16px;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 16px;
 }

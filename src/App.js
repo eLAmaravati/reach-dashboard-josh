@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import './App.scss';
 import { TogaIcon, PeopleOutline, LogoIcon } from "./components/Icon";
 import illustrationjosh from './icon/illustration-josh.svg';
-import LineChart from './components/LineChart';
-import Course from './components/Course';
-import CircleChart from './components/CircleChart';
+import LineChart from './components/ChartLine';
+import Course from './components/CourseComponent';
+import CircleChart from './components/ChartCircle';
 
 function App() {
   return (
